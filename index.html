@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" dir="ltr">
+<html class="" lang="en" dir="ltr">
     <head>
-        <base href="/">
         <title>Basic Site Template</title>
         <meta charset="UTF-8">
         <meta http-equiv="cleartype" content="on">
@@ -23,7 +22,7 @@
         <meta name="msapplication-TileColor" content="#FFFFFF">
 
         <!-- css -->
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./dist/style.css">
 
         <!-- do you want Modernizr? -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
@@ -32,7 +31,29 @@
     <body>
         <!-- No templating system here, this is a basic setup -->
 
-        <!-- do you want jQuery? -->
-        <!-- <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script> -->
+        <header class="header" id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="header-inner">
+                <h1 class="header-logo" itemscope itemtype="http://schema.org/WPHeader">
+                    <a href="/">Basic Site Template</a>
+                </h1>
+            </div>
+        </header>
+
+        <div id="page" class="page">
+            <main class="main" id="main" role="main">
+                <div class="layout layout-a">
+                    <div class="region region-a">
+                        <div class="region-inner">
+                            <div class="block block-size-a">
+                                <h2>HOME</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+        <script src="./dist/scripts.js"></script>
     </body>
 </html>

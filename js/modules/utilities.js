@@ -93,7 +93,6 @@ var site = site ? site : {};
     $.subscribe('pageReady', function() {
         site.textDirection();
         site.browserPrefix();
-        site.transitionAnimationEndEvent();
         site.setUrlParams();
     });
 }(jQuery));
