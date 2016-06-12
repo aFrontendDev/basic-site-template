@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var pxtorem = require('gulp-pxtorem');
 var autoprefixer = require('gulp-autoprefixer');
+var browserSync = require('browser-sync');
 
 var pxtoremProperties = [
     'font-size',
@@ -108,11 +109,27 @@ gulp.task('pxtorem', ['sass', 'autoprefixer'], function () {
         .pipe(gulp.dest('./dist/'));
 });
 
+
+gulp.task('browser-sync', function () {
+	browserSync.create().init({
+	  browser: 'google chrome',
+	  files: ['./dist/*'],
+	  notify: false,
+	  server: {
+	    baseDir: './'
+	  },
+	  watchOptions: {}
+	});
+});
+
+
 gulp.task('scripts', ['jslint', 'concatjs']);
 
 gulp.task('styles', ['sass', 'autoprefixer', 'pxtorem']);
 
 gulp.task('default', ['scripts', 'styles']);
+
+gulp.task('serve', ['default', 'browser-sync', 'sass:watch']);
 
 gulp.task('sass:watch', function () {
     gulp.watch('./sass/**/*.scss', ['styles']);
